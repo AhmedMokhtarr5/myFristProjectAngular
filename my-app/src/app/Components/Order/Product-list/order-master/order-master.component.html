@@ -1,0 +1,13 @@
+<h2>Creat Your Own order:</h2>
+<div class="mb-3">
+    <label for="prdcat" class="form-label">Category:</label>
+    <!-- <select #cat class="form-select form-select-lg" name="cat" id="pedcat" (change)="getselcat(cat.value)"> -->
+    <select #cat class="form-select form-select-lg" name="cat" id="pedcat" [(ngModel)]="selectedcatID" > 
+        <option *ngFor="let item of catlist" [value]="item.id">{{item.name}}</option>
+       
+    </select>
+</div>
+<hr>
+<app-product-list></app-product-list>
+<hr>
+<h3>Order total price : {{OrderTotalPrice}}</h3>
